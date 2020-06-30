@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" stylesheets="@../css/bootstrapfx.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.yinuo.controller.UserController">
+   <children>
+      <BorderPane minHeight="600.0" minWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <FlowPane hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField prefHeight="30.0" prefWidth="100.0" promptText="用户编号" />
+                  <TextField prefHeight="30.0" prefWidth="100.0" promptText="用户姓名" />
+                  <ComboBox fx:id="userTypes" prefHeight="30.0" prefWidth="100.0" promptText="用户类型" />
+                  <ComboBox fx:id="userGroups" prefHeight="30.0" prefWidth="100.0" promptText="所属分组" />
+                  <Button mnemonicParsing="false" prefHeight="30.0" text="查询">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-primary" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="30.0" text="刷新">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-primary" />
+                     </styleClass></Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </FlowPane>
+         </top>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <center>
+            <TableView tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="100.0" text="用户编号" />
+                <TableColumn prefWidth="100.0" text="用户姓名" />
+                  <TableColumn prefWidth="100.0" text="用户类型" />
+                  <TableColumn prefWidth="150.0" text="所属分组" />
+                  <TableColumn prefWidth="100.0" text="用户状态" />
+                  <TableColumn prefWidth="200.0" text="更新日期" />
+              </columns>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </BorderPane.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <bottom>
+            <FlowPane hgap="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#add" text="新增用户">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-success" />
+                     </styleClass></Button>
+                  <Button mnemonicParsing="false" text="删除用户">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-danger" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" text="从excel导入">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-primary" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" text="导出到excel">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-primary" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/bootstrapfx.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.yinuo.controller.LoginController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <top>
+            <HBox fx:id="headerBox" alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #0366d8;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../img/face%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="人脸识别管理平台" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="strong" />
+                        <String fx:value="h1" />
+                     </styleClass>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="50.0" right="10.0" top="20.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <VBox alignment="CENTER" fillWidth="false" spacing="25.0" styleClass="panel" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="username" prefHeight="35.0" prefWidth="300.0" promptText="用户名" styleClass="text-primary">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <PasswordField fx:id="password" prefHeight="35.0" prefWidth="300.0" promptText="密码" styleClass="text-primary">
+                     <font>
+                        <Font size="18.0" />
+                     </font></PasswordField>
+                  <Button mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="300.0" text="登录">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-success" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#exit" prefHeight="35.0" prefWidth="300.0" text="退出">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-danger" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="3.0" right="3.0" top="3.0" />
+               </padding>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
