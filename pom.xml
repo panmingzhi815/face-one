@@ -24,6 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <controlsfx.version>8.40.16</controlsfx.version>
     </properties>
 
     <dependencies>
@@ -53,5 +54,18 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
+
+        <!--guice-->
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>4.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-persist</artifactId>
+            <version>4.2.3</version>
+        </dependency>
+        <!--guice-->
     </dependencies>
 </project>

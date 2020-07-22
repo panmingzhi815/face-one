@@ -1,6 +1,5 @@
 package org.yinuo.controller;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -10,7 +9,6 @@ import org.yinuo.utils.Configs;
 import org.yinuo.utils.Utils;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class UserController implements Initializable {
@@ -20,11 +18,8 @@ public class UserController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        List<String> configValues = Configs.getConfigValues(SystemConfig.KeyEnum.用户类型.name());
-        userTypes.setItems(FXCollections.observableArrayList(configValues));
-
-        List<String> configValues1 = Configs.getConfigValues(SystemConfig.KeyEnum.用户分组.name());
-        userGroups.setItems(FXCollections.observableArrayList(configValues1));
+        userTypes.setItems(Configs.getConfigValues(SystemConfig.KeyEnum.userTypes.name()));
+        userGroups.setItems(Configs.getConfigValues(SystemConfig.KeyEnum.userGroups.name()));
     }
 
     public void add(ActionEvent event) {

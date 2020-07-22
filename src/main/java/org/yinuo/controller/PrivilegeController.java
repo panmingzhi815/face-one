@@ -18,16 +18,16 @@ public class PrivilegeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        List<String> configValues = Configs.getConfigValues(SystemConfig.KeyEnum.设备状态.name());
+        List<String> configValues = Configs.getConfigValues(SystemConfig.KeyEnum.deviceStatus.name());
         deviceStatus.setItems(FXCollections.observableArrayList(configValues));
 
-        List<String> configValues1 = Configs.getConfigValues(SystemConfig.KeyEnum.设备分组.name());
+        List<String> configValues1 = Configs.getConfigValues(SystemConfig.KeyEnum.deviceGroups.name());
         deviceGroups.setItems(FXCollections.observableArrayList(configValues1));
 
-        List<String> configValues2 = Configs.getConfigValues(SystemConfig.KeyEnum.用户类型.name());
+        List<String> configValues2 = Configs.getConfigValues(SystemConfig.KeyEnum.userTypes.name());
         userTypes.setItems(FXCollections.observableArrayList(configValues2));
 
-        List<String> configValues3 = Configs.getConfigValues(SystemConfig.KeyEnum.用户分组.name());
+        List<String> configValues3 = Configs.getConfigValues(SystemConfig.KeyEnum.userGroups.name());
         userGroups.setItems(FXCollections.observableArrayList(configValues3));
     }
 }

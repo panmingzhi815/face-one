@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Apache Derby (Embedded) - db" uuid="296098e6-3d8e-4a8a-9817-3be8ff3dc31f">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:db;create=true</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="jpa-unit/Hibernate" uuid="ece696ec-b862-4300-aa9b-04477345f3dc">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+D:/source/face-one/src/main/resources/META-INF/persistence.xml</remarks>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:db;create=true</jdbc-url>
+    </data-source>
+  </component>
+</project>

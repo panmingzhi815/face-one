@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Accessors(fluent = true)
 public class SystemConfig {
     public enum KeyEnum{
-        用户类型,用户状态,用户分组,设备状态,设备分组
+        userTypes, userStatus, userGroups, deviceStatus, deviceGroups
     }
 
     @Id

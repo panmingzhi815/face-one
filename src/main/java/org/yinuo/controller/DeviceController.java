@@ -16,10 +16,10 @@ public class DeviceController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        List<String> configValues = Configs.getConfigValues(SystemConfig.KeyEnum.设备状态.name());
+        List<String> configValues = Configs.getConfigValues(SystemConfig.KeyEnum.deviceStatus.name());
         deviceStatus.setItems(FXCollections.observableArrayList(configValues));
 
-        List<String> configValues1 = Configs.getConfigValues(SystemConfig.KeyEnum.设备分组.name());
+        List<String> configValues1 = Configs.getConfigValues(SystemConfig.KeyEnum.deviceGroups.name());
         deviceGroups.setItems(FXCollections.observableArrayList(configValues1));
     }
 }

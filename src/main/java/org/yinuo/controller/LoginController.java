@@ -2,6 +2,7 @@ package org.yinuo.controller;
 
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.StrUtil;
+import com.google.inject.Inject;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -21,7 +22,8 @@ public class LoginController implements Initializable {
     public HBox headerBox;
     public TextField username;
     public PasswordField password;
-    private final LoginService loginService = new LoginService();
+    @Inject
+    private LoginService loginService;
 
     public void initialize(URL location, ResourceBundle resources) {
         Utils.Drag(headerBox);
@@ -46,6 +48,6 @@ public class LoginController implements Initializable {
     }
 
     public void exit(ActionEvent actionEvent) {
-        Platform.exit();
+        System.exit(1);
     }
 }

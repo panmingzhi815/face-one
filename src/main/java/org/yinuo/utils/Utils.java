@@ -1,5 +1,6 @@
 package org.yinuo.utils;
 
+import cn.hutool.core.util.StrUtil;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -7,17 +8,24 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputControl;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 public class Utils {
+
+    public static FXMLLoader fxmlLoader;
+
     private static Double xOffSet = 0.0;
     private static Double yOffSet = 0.0;
 
@@ -43,9 +51,12 @@ public class Utils {
     }
 
     public static Parent loadFxml(String fxml) {
+        log.info("加载 fxml:{}",fxml);
         try {
-            return FXMLLoader.load(ClassLoader.getSystemResource(fxml));
+            fxmlLoader.setLocation(ClassLoader.getSystemResource(fxml));
+            return fxmlLoader.load();
         } catch (IOException e) {
+            log.error("加载fxml出错",e);
             return null;
         }
     }
@@ -92,5 +103,19 @@ public class Utils {
             alert.setHeaderText(message);
             alert.showAndWait();
         });
+    }
+
+    public static boolean isAllNotEmpty(TextInputControl... textFields){
+        boolean valid = true;
+        for (TextInputControl textField : textFields) {
+            if(StrUtil.isEmpty(textField.getText())){
+                textField.getStyleClass().addAll("alert-danger");
+                valid = false;
+            }else{
+                textField.getStyleClass().removeAll("alert-danger");
+            }
+        }
+
+        return valid;
     }
 }
